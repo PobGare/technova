@@ -29,7 +29,7 @@ The application flow is a demo experience and is not connected to a production a
 
 ## Live Website
 
-Live deployment coming soon.
+https://pobgare.github.io/technova/
 
 ## Author
 
