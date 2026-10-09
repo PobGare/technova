@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="TechNova Institute — a future-facing technology learning experience for practical career skills.">
+  <meta name="theme-color" content="#f8f4e8">
+  <title>TechNova Institute — Learn by building</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Recursive:slnt,wght,CASL@-15..0,300..800,0..1&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <header class="school-header">
+    <a class="school-mark" href="#top" aria-label="TechNova Institute home">
+      <span>TECH</span><b>NOVA</b><small>INSTITUTE</small>
+    </a>
+
+    <nav class="school-nav" aria-label="Primary navigation">
+      <a href="#programs">Programs</a>
+      <a href="#method">Method</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="school-actions">
+      <button class="header-apply" data-apply type="button">Apply now <span>↗</span></button>
+      <button class="school-menu" type="button" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    </div>
+  </header>
+
+  <div class="school-mobile-nav" id="mobileNav" aria-hidden="true">
+    <a href="#programs">Programs</a>
+    <a href="#method">Method</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#faq">FAQ</a>
+    <button data-apply type="button">Apply now <span>↗</span></button>
+  </div>
+
+  <main id="top">
+    <section class="school-hero">
+      <div class="hero-copy">
+        <span class="margin-note">ADMISSIONS / 2026</span>
+        <h1>Learn skills by<br><em>making real things.</em></h1>
+        <p>Career-focused technology training built around projects, critique, repetition and practical confidence — not
+          endless slides.</p>
+        <div class="hero-cta">
+          <button data-apply type="button">Start an application <span>↗</span></button>
+          <a href="#programs">Explore programs <span>↓</span></a>
+        </div>
+      </div>
+
+      <div class="curriculum-board" id="curriculumBoard">
+        <canvas id="learningMap" aria-hidden="true"></canvas>
+        <button class="node n1" data-track="web" type="button"><b>01</b><span>Web Development</span><small>HTML · CSS ·
+            JS</small></button>
+        <button class="node n2" data-track="design" type="button"><b>02</b><span>Graphic Design</span><small>Visual
+            systems</small></button>
+        <button class="node n3" data-track="ui" type="button"><b>03</b><span>UI /
+            UX</span><small>Interfaces</small></button>
+        <button class="node n4" data-track="marketing" type="button"><b>04</b><span>Digital
+            Marketing</span><small>Audience + growth</small></button>
+        <button class="node n5" data-track="video" type="button"><b>05</b><span>Video Editing</span><small>Story +
+            motion</small></button>
+        <div class="board-key" aria-hidden="true">
+          <span>Interactive curriculum map</span>
+          <span>Click a track <b>↗</b></span>
+        </div>
+      </div>
+
+      <div class="hero-footer" aria-label="Institute summary">
+        <span>Austin, Texas</span>
+        <span>Practical courses / small cohorts</span>
+        <span>Scroll to map your path ↓</span>
+      </div>
+    </section>
+
+    <section class="programs" id="programs">
+      <div class="section-heading">
+        <span>01 / PROGRAMS</span>
+        <h2>Choose the craft.<br><em>Build the proof.</em></h2>
+      </div>
+
+      <div class="program-ledger">
+        <article data-track-card="web">
+          <span class="p-num">01</span>
+          <div>
+            <h3>Web Development</h3>
+            <p>Responsive front-end fundamentals, Bootstrap, JavaScript, practical websites and portfolio work.</p>
+          </div>
+          <div class="p-meta"><span>3 months</span><b>HTML / CSS / JS</b></div>
+          <button type="button" data-apply-program="Web Development">Apply <span>↗</span></button>
+        </article>
+        <article data-track-card="design">
+          <span class="p-num">02</span>
+          <div>
+            <h3>Graphic Design</h3>
+            <p>Layout, typography, brand systems, social graphics and visual communication for real briefs.</p>
+          </div>
+          <div class="p-meta"><span>3 months</span><b>DESIGN / BRAND</b></div>
+          <button type="button" data-apply-program="Graphic Design">Apply <span>↗</span></button>
+        </article>
+        <article data-track-card="ui">
+          <span class="p-num">03</span>
+          <div>
+            <h3>UI / UX Design</h3>
+            <p>Interface structure, user flows, responsive systems and prototyping decisions.</p>
+          </div>
+          <div class="p-meta"><span>2 months</span><b>UI / UX</b></div>
+          <button type="button" data-apply-program="UI/UX Design">Apply <span>↗</span></button>
+        </article>
+        <article data-track-card="marketing">
+          <span class="p-num">04</span>
+
+          <div>
+            <h3>Digital Marketing</h3>
+            <p>Content, search, social media and campaign fundamentals built around practical audience and business
+              goals.</p>
+          </div>
+
+          <div class="p-meta">
+            <span>3 months</span>
+            <b>CONTENT / GROWTH</b>
+          </div>
+
+          <button type="button" data-apply-program="Digital Marketing">
+            Apply <span>↗</span>
+          </button>
+        </article>
+        <article data-track-card="video">
+          <span class="p-num">05</span>
+          <div>
+            <h3>Video Editing</h3>
+            <p>Editing rhythm, story structure, sound, captions, transitions and short-form delivery.</p>
+          </div>
+          <div class="p-meta"><span>2 months</span><b>EDIT / MOTION</b></div>
+          <button type="button" data-apply-program="Video Editing">Apply <span>↗</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="method" id="method">
+      <div class="method-left">
+        <span class="section-kicker">02 / METHOD</span>
+        <h2>The classroom<br>behaves like a <em>studio.</em></h2>
+        <p>You learn a concept, make something with it, get feedback, revise, and then do it again at a higher level.
+        </p>
+      </div>
+
+      <div class="method-path" aria-label="TechNova learning method">
+        <article><span>WEEK 01</span><b>Learn the tool</b>
+          <p>Core concepts are introduced through small, focused exercises.</p>
+        </article>
+        <article><span>WEEK 02+</span><b>Build under constraint</b>
+          <p>Projects force decisions instead of passive note-taking.</p>
+        </article>
+        <article><span>REVIEW</span><b>Critique the result</b>
+          <p>Work is checked for clarity, structure and technical correctness.</p>
+        </article>
+        <article><span>REPEAT</span><b>Make the next one better</b>
+          <p>Confidence comes from useful repetition, not memorizing definitions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="schedule" id="schedule">
+      <div class="section-heading schedule-heading">
+        <span>03 / SCHEDULE</span>
+        <h2>Find your<br><em>learning window.</em></h2>
+      </div>
+
+      <div class="schedule-shell">
+        <div class="schedule-days" role="tablist" aria-label="Class days">
+          <button class="active" data-day="mon" type="button" role="tab" aria-selected="true">Mon</button>
+          <button data-day="tue" type="button" role="tab" aria-selected="false">Tue</button>
+          <button data-day="wed" type="button" role="tab" aria-selected="false">Wed</button>
+          <button data-day="thu" type="button" role="tab" aria-selected="false">Thu</button>
+          <button data-day="sat" type="button" role="tab" aria-selected="false">Sat</button>
+        </div>
+        <div class="schedule-grid" id="scheduleGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="proof" id="outcome">
+      <div class="proof-statement">
+        <span class="section-kicker">04 / OUTCOME</span>
+        <p>Leave with work you can <em>show</em>, explain and improve — not just a certificate you can list.</p>
+      </div>
+
+      <div class="proof-notes">
+        <div><b>PROJECT-LED</b><span>Build throughout the course.</span></div>
+        <div><b>CAREER-AWARE</b><span>Portfolio and interview thinking included.</span></div>
+        <div><b>BEGINNER-FRIENDLY</b><span>Start from fundamentals; progress by doing.</span></div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="faq-layout">
+        <div class="faq-intro">
+          <span class="section-kicker">05 / FAQ</span>
+          <h2>Before you<br><em>enrol.</em></h2>
+          <p>Clear answers to the questions students usually ask before choosing a program.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+              <span>Do I need previous experience?</span><i aria-hidden="true">+</i>
+            </button>
+            <div class="faq-answer" id="faq-answer-1">
+              <div>
+                <p>No. The beginner tracks start from fundamentals and build toward practical projects.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+              <span>How long are the courses?</span><i aria-hidden="true">+</i>
+            </button>
+            <div class="faq-answer" id="faq-answer-2">
+              <div>
+                <p>Most programs run for two to three months depending on the subject and schedule.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+              <span>Will I build projects?</span><i aria-hidden="true">+</i>
+            </button>
+            <div class="faq-answer" id="faq-answer-3">
+              <div>
+                <p>Yes. Practical work is the core of the learning model and becomes part of your portfolio.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+              <span>Can I ask about schedules before applying?</span><i aria-hidden="true">+</i>
+            </button>
+            <div class="faq-answer" id="faq-answer-4">
+              <div>
+                <p>Yes. Submit an application request and the admissions team can confirm current timing and
+                  availability.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="school-footer">
+    <div class="footer-main">
+      <a class="footer-brand" href="#top">TechNova Institute</a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#programs">Programs</a>
+        <a href="#method">Method</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="footer-action">
+        <span>Austin, Texas</span>
+        <button data-apply type="button">Admissions <span>↗</span></button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TechNova Institute</span>
+      <span>Practical technology education.</span>
+    </div>
+  </footer>
+
+  <dialog class="track-dialog" id="trackDialog">
+    <button class="dialog-x" type="button" data-close-track aria-label="Close track details">×</button>
+    <span id="trackIndex">01 / TRACK</span>
+    <h2 id="trackTitle"></h2>
+    <p id="trackText"></p>
+    <div id="trackSkills" class="track-skills"></div>
+    <button type="button" data-apply>Apply for this path <span>↗</span></button>
+  </dialog>
+
+  <dialog class="apply-dialog" id="applyDialog">
+    <form id="applyForm" method="dialog">
+      <button class="dialog-x" type="button" data-close-apply aria-label="Close application">×</button>
+      <span>ADMISSIONS REQUEST</span>
+      <h2>Tell us what you want to learn.</h2>
+      <div class="apply-grid">
+        <label>Name<input required autocomplete="name"></label>
+        <label>Phone<input required autocomplete="tel"></label>
+        <label>Program<select id="applyProgram" required>
+            <option value="" selected disabled>Select a program</option>
+            <option>Web Development</option>
+            <option>Graphic Design</option>
+            <option>UI/UX Design</option>
+            <option>Digital Marketing</option>
+            <option>Video Editing</option>
+          </select></label>
+        <label>Preferred time<select required>
+            <option value="" selected disabled>Select a time</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select></label>
+      </div>
+      <button class="apply-submit" type="submit">Send application request <span>↗</span></button>
+    </form>
+  </dialog>
+
+  <div class="school-toast" id="schoolToast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
