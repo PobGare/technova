@@ -47,7 +47,7 @@
     </div>
   </header>
 
-  <div class="school-mobile-nav" id="mobileNav" aria-hidden="true">
+  <div class="school-mobile-nav" id="mobileNav" aria-hidden="true" inert>
     <a href="#programs">Programs</a>
     <a href="#method">Method</a>
     <a href="#schedule">Schedule</a>
@@ -189,13 +189,13 @@
 
       <div class="schedule-shell">
         <div class="schedule-days" role="tablist" aria-label="Class days">
-          <button class="active" data-day="mon" type="button" role="tab" aria-selected="true">Mon</button>
-          <button data-day="tue" type="button" role="tab" aria-selected="false">Tue</button>
-          <button data-day="wed" type="button" role="tab" aria-selected="false">Wed</button>
-          <button data-day="thu" type="button" role="tab" aria-selected="false">Thu</button>
-          <button data-day="sat" type="button" role="tab" aria-selected="false">Sat</button>
+          <button class="active" id="day-mon" data-day="mon" type="button" role="tab" aria-selected="true" aria-controls="scheduleGrid" tabindex="0">Mon</button>
+          <button id="day-tue" data-day="tue" type="button" role="tab" aria-selected="false" aria-controls="scheduleGrid" tabindex="-1">Tue</button>
+          <button id="day-wed" data-day="wed" type="button" role="tab" aria-selected="false" aria-controls="scheduleGrid" tabindex="-1">Wed</button>
+          <button id="day-thu" data-day="thu" type="button" role="tab" aria-selected="false" aria-controls="scheduleGrid" tabindex="-1">Thu</button>
+          <button id="day-sat" data-day="sat" type="button" role="tab" aria-selected="false" aria-controls="scheduleGrid" tabindex="-1">Sat</button>
         </div>
-        <div class="schedule-grid" id="scheduleGrid" aria-live="polite"></div>
+        <div class="schedule-grid" id="scheduleGrid" role="tabpanel" aria-labelledby="day-mon" tabindex="0"></div>
       </div>
     </section>
 
@@ -290,20 +290,21 @@
     </div>
   </footer>
 
-  <dialog class="track-dialog" id="trackDialog">
+  <dialog class="track-dialog" id="trackDialog" aria-labelledby="trackTitle">
     <button class="dialog-x" type="button" data-close-track aria-label="Close track details">×</button>
     <span id="trackIndex">01 / TRACK</span>
     <h2 id="trackTitle"></h2>
     <p id="trackText"></p>
     <div id="trackSkills" class="track-skills"></div>
-    <button type="button" data-apply>Apply for this path <span>↗</span></button>
+    <button type="button" data-apply-program>Apply for this path <span>↗</span></button>
   </dialog>
 
-  <dialog class="apply-dialog" id="applyDialog">
+  <dialog class="apply-dialog" id="applyDialog" aria-labelledby="applyTitle" aria-describedby="applyNotice">
     <form id="applyForm" method="dialog">
       <button class="dialog-x" type="button" data-close-apply aria-label="Close application">×</button>
       <span>ADMISSIONS REQUEST</span>
-      <h2>Tell us what you want to learn.</h2>
+      <h2 id="applyTitle">Tell us what you want to learn.</h2>
+      <p id="applyNotice">Portfolio demo — no application is sent or saved. Use sample details.</p>
       <div class="apply-grid">
         <label>Name<input required autocomplete="name"></label>
         <label>Phone<input required autocomplete="tel"></label>

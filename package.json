@@ -1,0 +1,23 @@
+{
+  "name": "technova",
+  "version": "1.0.0",
+  "description": "TechNova is a responsive technology institute website designed to present programs, curriculum, schedules, FAQs, and application information through an interactive front-end experience.",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PobGare/technova.git"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PobGare/technova/issues"
+  },
+  "homepage": "https://github.com/PobGare/technova#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  },
+  "private": true
+}

@@ -4,30 +4,35 @@
 
   const tracks = {
     web: {
+      program: 'Web Development',
       i: '01 / WEB DEVELOPMENT',
       title: 'Build for the browser.',
       text: 'Start with semantic HTML and responsive CSS, then add Bootstrap and JavaScript until you can produce complete front-end websites.',
       skills: ['HTML', 'CSS', 'Bootstrap', 'JavaScript', 'Responsive UI']
     },
     design: {
+      program: 'Graphic Design',
       i: '02 / GRAPHIC DESIGN',
       title: 'Make information visible.',
       text: 'Learn hierarchy, typography, colour, composition and how to turn a brief into a consistent visual system.',
       skills: ['Typography', 'Layout', 'Brand systems', 'Social design']
     },
     ui: {
+      program: 'UI/UX Design',
       i: '03 / UI / UX',
       title: 'Design the path, not just the screen.',
       text: 'Structure user flows, responsive interfaces and interaction patterns that make products easier to understand and use.',
       skills: ['User flows', 'Wireframes', 'Interface systems', 'Responsive design']
     },
     marketing: {
+      program: 'Digital Marketing',
       i: '04 / DIGITAL MARKETING',
       title: 'Understand the audience.',
       text: 'Learn content, search, social and campaign fundamentals so creative work connects with actual business goals.',
       skills: ['Content', 'Social', 'SEO basics', 'Campaigns']
     },
     video: {
+      program: 'Video Editing',
       i: '05 / VIDEO EDITING',
       title: 'Control time and attention.',
       text: 'Use cuts, sound, captions and pacing to turn raw footage into clear, watchable stories.',
@@ -68,6 +73,7 @@
     $('#trackIndex').textContent = track.i;
     $('#trackTitle').textContent = track.title;
     $('#trackText').textContent = track.text;
+    $('[data-apply-program]', trackDialog).dataset.applyProgram = track.program;
     $('#trackSkills').innerHTML = track.skills.map(skill => `<span>${skill}</span>`).join('');
     trackDialog.showModal();
   }
@@ -114,7 +120,7 @@
     event.preventDefault();
     applyDialog.close();
     event.currentTarget.reset();
-    toast('Application request captured for this demo.');
+    toast('Demo complete — no application was sent or saved.');
   });
 
   function toast(message) {
@@ -146,15 +152,30 @@
 
   renderSchedule();
 
-  $$('.schedule-days button').forEach(button => {
-    button.addEventListener('click', () => {
-      $$('.schedule-days button').forEach(item => {
-        item.classList.remove('active');
-        item.setAttribute('aria-selected', 'false');
-      });
-      button.classList.add('active');
-      button.setAttribute('aria-selected', 'true');
-      renderSchedule(button.dataset.day);
+  const dayTabs = $$('.schedule-days [role="tab"]');
+  function selectDay(button) {
+    dayTabs.forEach(item => {
+      const selected = item === button;
+      item.classList.toggle('active', selected);
+      item.setAttribute('aria-selected', String(selected));
+      item.tabIndex = selected ? 0 : -1;
+    });
+    $('#scheduleGrid').setAttribute('aria-labelledby', button.id);
+    renderSchedule(button.dataset.day);
+  }
+
+  dayTabs.forEach((button, index) => {
+    button.addEventListener('click', () => selectDay(button));
+    button.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % dayTabs.length;
+      else if (event.key === 'ArrowLeft') next = (index - 1 + dayTabs.length) % dayTabs.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = dayTabs.length - 1;
+      else return;
+      event.preventDefault();
+      selectDay(dayTabs[next]);
+      dayTabs[next].focus();
     });
   });
 
@@ -183,6 +204,7 @@
     const open = !mobileNav.classList.contains('open');
     mobileNav.classList.toggle('open', open);
     mobileNav.setAttribute('aria-hidden', String(!open));
+    mobileNav.inert = !open;
     menuButton.setAttribute('aria-expanded', String(open));
   });
 
@@ -190,8 +212,15 @@
     control.addEventListener('click', () => {
       mobileNav.classList.remove('open');
       mobileNav.setAttribute('aria-hidden', 'true');
+      mobileNav.inert = true;
       menuButton?.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  mobileNav.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    menuButton.click();
+    menuButton.focus();
   });
 
   /* Subtle scroll reveal */
