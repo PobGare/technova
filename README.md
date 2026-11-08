@@ -34,14 +34,3 @@ https://pobgare.github.io/technova/
 ## Author
 
 Muhammad Bin Qasim
-## Local regression checks
-
-Install Node.js and Google Chrome, then run `npm ci` and `npm test`.
-Playwright starts and stops a local static server automatically. The suite covers
-320, 360, 390, 768, 1024, and 1440px widths; course mappings, modal names and
-keyboard focus, schedule tabs, sample form submission, FAQ, mobile navigation,
-console errors, and horizontal overflow. Full-page screenshots are written to
-`test-results/` (ignored by Git).
-
-These checks use desktop Chromium viewport emulation, not physical devices or
-screen-reader testing. Google Fonts requires internet access.
